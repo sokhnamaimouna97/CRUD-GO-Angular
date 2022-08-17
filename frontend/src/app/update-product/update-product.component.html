@@ -1,0 +1,44 @@
+<h3>Update User</h3>
+<div  style="width: 500px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name"> Name</label>
+      <input type="text" class="form-control" 
+      id="Name" required 
+      [(ngModel)]="product.name" name="Name">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Description</label>
+      <input type="text" class="form-control" 
+      id="description" required 
+      [(ngModel)]="product.description" name="Description">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Price </label>
+      <input type="text" class="form-control" 
+      id="price" required [(ngModel)]="product.price"
+       name="Price">
+    </div>
+    <div class="form-group">
+      <label for="name">Quantité </label>
+      <input type="text" class="form-control" 
+      id="quantity" required [(ngModel)]="product.quantity"
+       name="Quantity">
+    </div>
+    <div class="form-group">
+      <label for="name">Categorie  </label>
+      <input type="text" class="form-control" 
+      id="idCategory" required [(ngModel)]="product.id_category"
+       name="idCategory">
+    </div>
+
+    <button type="submit" class="btn btn-success">
+       Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!updated">
+  <h4>Successfully updated!</h4>
+</div>

@@ -1,0 +1,40 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+  Mot Clé : <input type= "text" formControlName="motcle" [ngClass]="{'is-valid':submitted && f.motcle.errors}" class="form-control" placeholder="mot-clé"/>
+  <div *ngIf="submitted && f.motcle.errors">
+    <div *ngIf="f.motcle.errors.required">
+      <p>le mot cle est obligatoire</p>
+     </div>
+   </div>
+  </div>
+  <input type="submit" value="chercher">
+</form>
+<div class="col-md-6">
+  <div *ngIf="produits">
+  <table class="table">
+  <thead>
+    <tr>
+     <th scope="col">Name</th>
+      <th scope="col">DESIGNATION</th>
+      <th scope="col">CATEGORIE</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">QUANTITE</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="produits!=null">
+    <tr *ngFor="let item of produits">
+      <td>{{item.name}}</td>
+      <td>{{item.designation}}</td>
+      <td>{{item.id_category}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.quantity}}</td>
+      <td>
+        <button class="btn btn-outline-primary" >Modifier</button>
+        <button class="btn btn-outline-danger">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+

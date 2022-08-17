@@ -1,0 +1,51 @@
+<h3>Create Product</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name"> Name</label>
+      <input type="text" class="form-control" 
+      id="Name" required 
+      [(ngModel)]="product.name" name="Name">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Description</label>
+      <input type="text" class="form-control" 
+      id="Description" required 
+      [(ngModel)]="product.description" name="Description">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Price </label>
+      <input type="text" class="form-control" 
+      id="Price" required [(ngModel)]="product.price"
+       name="Price">
+    </div>
+    <div class="form-group">
+      <label for="name">Quantité </label>
+      <input type="text" class="form-control" 
+      id="Quantity" required [(ngModel)]="product.quantity"
+       name="Quantity">
+    </div>
+    <div class="form-group">
+      <label for="name">Categorie </label>
+      <input type="text" class="form-control" 
+      id="Category" required [(ngModel)]="product.id_category"
+       name="category">
+    </div>
+    <!--div class="form-group">
+      <label for="name">Categorie  </label>
+      <select  [(ngModel)]="product.id_category" class="form-control" >
+        <option value="">select categorie</option>
+        <option *ngFor="let categorie of categories" value="{{categorie.id}}">{{categorie.libelle}}</option>
+      </select>
+    </div-->
+
+    <button type="submit" 
+    class="btn btn-danger">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Successfully submitted!</h4>
+</div>
